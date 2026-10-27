@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spurs Daily · 热刺每日新闻</title>
+<link rel="stylesheet" href="style.css">
+<link rel="alternate" type="application/rss+xml" title="Tottenham News RSS" href="feed.xml">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <span class="crest">⚪</span>
+      <div>
+        <h1>Spurs Daily</h1>
+        <p class="subtitle">托特纳姆热刺 · 每日新闻聚合</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <input type="search" id="searchBox" placeholder="搜索新闻标题 / 关键词..." aria-label="搜索">
+      <a href="feed.xml" class="rss-btn" title="RSS 订阅">RSS</a>
+    </div>
+  </div>
+</header>
+
+<nav class="category-bar">
+  <div class="container">
+    <button class="cat-btn active" data-cat="all">全部</button>
+    <button class="cat-btn" data-cat="transfer">转会</button>
+    <button class="cat-btn" data-cat="match">赛况</button>
+    <button class="cat-btn" data-cat="training">训练</button>
+    <button class="cat-btn" data-cat="injury">伤病</button>
+    <button class="cat-btn" data-cat="opinion">评论</button>
+    <button class="cat-btn" data-cat="general">综合</button>
+    <span class="cat-divider"></span>
+    <button class="cat-btn" data-cat="starred">★ 我的收藏</button>
+  </div>
+</nav>
+
+<main class="container layout">
+  <!-- 新闻流 -->
+  <section class="news-feed">
+    <div id="statusBar" class="status-bar">加载中...</div>
+    <div id="newsList" class="news-list"></div>
+    <div id="emptyState" class="empty-state" hidden>
+      <p>没有匹配的新闻</p>
+    </div>
+  </section>
+
+  <!-- 侧边栏 -->
+  <aside class="sidebar">
+    <div class="widget standings-widget">
+      <h2>英超积分榜</h2>
+      <div id="standingsTable" class="standings-table">加载中...</div>
+      <p class="widget-note" id="standingsNote"></p>
+    </div>
+
+    <div class="widget about-widget">
+      <h2>关于</h2>
+      <p>本页面由 GitHub Actions 每天自动更新，聚合 BBC、Sky Sports、Guardian、Google News 等中英文源的热刺相关报道。</p>
+      <p class="widget-note">数据更新时间：<span id="updatedAt">-</span></p>
+    </div>
+  </aside>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>Spurs Daily · 个人非官方项目，与托特纳姆热刺足球俱乐部无关</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

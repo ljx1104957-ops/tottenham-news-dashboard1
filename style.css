@@ -1,0 +1,346 @@
+/* ===== Spurs Daily 主题样式 ===== */
+:root {
+  --spurs-navy: #132257;
+  --spurs-navy-dark: #0d1a42;
+  --spurs-white: #ffffff;
+  --spurs-light: #f5f6fa;
+  --spurs-border: #e3e6ee;
+  --spurs-accent: #c8102e;
+  --spurs-gold: #d4a843;
+  --text-primary: #1a1f36;
+  --text-secondary: #5a6178;
+  --radius: 8px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--spurs-light);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== Header ===== */
+.site-header {
+  background: linear-gradient(135deg, var(--spurs-navy) 0%, var(--spurs-navy-dark) 100%);
+  color: var(--spurs-white);
+  padding: 24px 0;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.crest {
+  font-size: 36px;
+  background: var(--spurs-white);
+  color: var(--spurs-navy);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.brand h1 {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.subtitle {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#searchBox {
+  padding: 10px 16px;
+  border-radius: 24px;
+  border: none;
+  outline: none;
+  width: 260px;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--spurs-white);
+  transition: background 0.2s;
+}
+
+#searchBox::placeholder { color: rgba(255, 255, 255, 0.6); }
+#searchBox:focus { background: rgba(255, 255, 255, 0.25); }
+
+.rss-btn {
+  color: var(--spurs-white);
+  text-decoration: none;
+  padding: 8px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.rss-btn:hover { background: rgba(255, 255, 255, 0.15); }
+
+/* ===== Category Bar ===== */
+.category-bar {
+  background: var(--spurs-white);
+  border-bottom: 1px solid var(--spurs-border);
+  padding: 12px 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.category-bar .container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.cat-btn {
+  padding: 6px 14px;
+  border: 1px solid var(--spurs-border);
+  background: var(--spurs-white);
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--text-secondary);
+  transition: all 0.15s;
+}
+
+.cat-btn:hover {
+  border-color: var(--spurs-navy);
+  color: var(--spurs-navy);
+}
+
+.cat-btn.active {
+  background: var(--spurs-navy);
+  color: var(--spurs-white);
+  border-color: var(--spurs-navy);
+}
+
+.cat-divider {
+  width: 1px;
+  height: 20px;
+  background: var(--spurs-border);
+  margin: 0 8px;
+}
+
+/* ===== Layout ===== */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 28px;
+  padding: 28px 20px;
+}
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { order: -1; }
+}
+
+/* ===== News List ===== */
+.status-bar {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.news-card {
+  background: var(--spurs-white);
+  border: 1px solid var(--spurs-border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  transition: box-shadow 0.2s, transform 0.15s;
+}
+
+.news-card:hover {
+  box-shadow: 0 4px 16px rgba(19, 34, 87, 0.08);
+  transform: translateY(-1px);
+}
+
+.news-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.news-source {
+  font-weight: 600;
+  color: var(--spurs-navy);
+}
+
+.lang-tag {
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  background: var(--spurs-light);
+  color: var(--text-secondary);
+}
+
+.lang-tag.en { background: #e8f0fe; color: #1a73e8; }
+.lang-tag.zh { background: #fce8e6; color: #c5221f; }
+
+.cat-tag {
+  padding: 1px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  background: #fef7e0;
+  color: #b06000;
+}
+
+.news-time {
+  margin-left: auto;
+}
+
+.news-title {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.news-title a {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.news-title a:hover { color: var(--spurs-navy); }
+
+.news-summary {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+.news-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.star-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #ccc;
+  transition: color 0.15s;
+  padding: 2px;
+}
+
+.star-btn.starred { color: var(--spurs-gold); }
+.star-btn:hover { color: var(--spurs-gold); }
+
+.read-more {
+  font-size: 13px;
+  color: var(--spurs-navy);
+  text-decoration: none;
+}
+
+.read-more:hover { text-decoration: underline; }
+
+.empty-state {
+  text-align: center;
+  padding: 60px 0;
+  color: var(--text-secondary);
+}
+
+/* ===== Sidebar ===== */
+.widget {
+  background: var(--spurs-white);
+  border: 1px solid var(--spurs-border);
+  border-radius: var(--radius);
+  padding: 18px;
+  margin-bottom: 20px;
+}
+
+.widget h2 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--spurs-border);
+}
+
+.standings-table {
+  font-size: 12px;
+}
+
+.standings-row {
+  display: grid;
+  grid-template-columns: 24px 1fr 24px 24px 24px 32px;
+  gap: 4px;
+  padding: 5px 4px;
+  align-items: center;
+  border-bottom: 1px solid var(--spurs-border);
+}
+
+.standings-row.head {
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 11px;
+}
+
+.standings-row.spurs {
+  background: #eef2ff;
+  font-weight: 700;
+  border-radius: 4px;
+}
+
+.widget-note {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.about-widget p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  background: var(--spurs-navy-dark);
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 12px;
+  margin-top: 40px;
+}
