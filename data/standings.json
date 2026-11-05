@@ -1,7 +1,7 @@
 {
   "competition": "Premier League",
   "season": "2026/27",
-  "updated_at": "2026-11-04T05:48:43.911519+00:00",
+  "updated_at": "2026-11-05T06:07:10.813583+00:00",
   "note": "示意数据 — 在 GitHub Secrets 配置 FOOTBALL_DATA_API_KEY 后自动拉取真实积分榜",
   "table": [
     {
